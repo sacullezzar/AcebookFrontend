@@ -13,5 +13,5 @@ it('renders a title', () => {
 
 it('randers a username on a post', () => {
   const postbox = shallow(<Post />)
-  expect(postbox.find('.username').text()).toEqual('Bob')
+  expect(postbox.find('.username').text()).toEqual('Tom')
 })

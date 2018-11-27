@@ -8,10 +8,21 @@ import Post from './components/post'
 class App extends Component {
 
   render() {
+    const user = {
+      userName: 'Tom',
+      body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit atque ullam iure suscipit, voluptate quaerat ab magnam nemo ducimus quisquam!'
+    }
+
+    const posts = [user, user, user, user, user]
+
     return (
       <div className="App">
         <Header />
-        <Post />
+        <div className='postsWrapper'>
+          {posts.map ((user) => {
+            return <Post user={user} />
+          })}
+        </div>
       </div>
     );
   }

@@ -1,0 +1,5 @@
+.postWrapper {
+  flex-basis: calc(33% - 20px);
+  margin: 10px;
+  width: 200px;
+}

@@ -32,3 +32,9 @@ ul {
   background-color: #555;
   color: white;
 }
+
+.postsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}

@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
+import './post.css'
 
 
 
 class Post extends Component {
   render() {
     return (
-
-      <div className="username">
+      <div className='postWrapper'>
+      <div className="username">{this.props.user.userName}</div>
+      <div className="body">{this.props.user.body}</div>
       </div>
 
     )
   }
 
 }
-
-Post.defaultProps = [
-  {name: "Bob"},
-]
 
 export default Post
