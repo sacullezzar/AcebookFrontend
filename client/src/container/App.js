@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import Header from './components/header.js'
-import Post from './components/post'
-
+import Header from '../components/header'
+import Post from '../components/post'
+import NewPost from '../components/NewPost'
 
 class App extends Component {
 
@@ -18,6 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <NewPost />
         <div className='postsWrapper'>
           {posts.map ((user) => {
             return <Post user={user} />
