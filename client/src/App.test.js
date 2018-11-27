@@ -5,6 +5,7 @@ import App from './App';
 import Post from './components/post'
 import { shallow, render } from 'enzyme';
 
+
 it('renders a title', () => {
   const wrapper = shallow(<Title />);
   expect(wrapper.find('.title').text()).toEqual('Acebook')
