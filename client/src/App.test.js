@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Title from './components/title'
 import App from './App';
 import Post from './components/post'
-import { shallow, render } from 'enzyme';
+import { mount, shallow, render } from 'enzyme';
 
 
 it('renders a title', () => {
@@ -11,7 +11,24 @@ it('renders a title', () => {
   expect(wrapper.find('.title').text()).toEqual('Acebook')
 });
 
-it('randers a username on a post', () => {
-  const postbox = shallow(<Post />)
-  expect(postbox.find('.username').text()).toEqual('Tom')
-})
+// it('randers a username on a post', () => {
+//   const postbox = shallow(<Post />)
+//   expect(postbox.find('.username').text()).toEqual('Tom')
+// })
+
+describe('<App />', () => {
+
+  it('calls componentDidMount', () => {
+    jest.fn(Post.prototype, 'componentDidMount');
+    const wrapper = shallow(<Post />);
+    expect(Post.prototype.componentDidMount.mock.calls.length).toBe(1);
+  });
+});
+
+// it('recieves post data', () => {
+//    const wrapper = shallow(<Post/>);
+//    wrapper.instance().componentDidMount = jest.fn();
+//    wrapper.update();
+//    wrapper.instance().constructor({name: 'Tom', body: 'Hello'});
+//    expect(wrapper.find('.body').text()).ToEqual('Hello')
+// })
