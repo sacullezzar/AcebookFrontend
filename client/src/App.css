@@ -30,3 +30,13 @@
     transform: rotate(360deg);
   }
 }
+
+.buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.button {
+  flex-basis: calc(33% - 20px);
+}

@@ -20,9 +20,11 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Title />
-          <Button function={this.chickenDipper} name='Log In' />
-          <Button function={this.sirSpamalot} name='Register' />
-          <Button name='New Post' />
+          <div className='buttonContainer'>
+            <Button className='button'  function={this.chickenDipper} name='Log In' />
+            <Button className='button' function={this.sirSpamalot} name='New Account' />
+            <Button className='button'  name='New Post' />
+          </div>
         </header>
         <Post />
       </div>
