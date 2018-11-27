@@ -21,13 +21,17 @@ class App extends Component {
   }
 
   render() {
+
+    const posts = [{"user": "Prash","message": "Hello World!"}]
+
     return (
       <div className="App">
         <Header />
         <div className='postsWrapper'>
-          {this.state.posts.map ((post) => {
-            return <Post post={post} />
-          })}
+          {posts.map ((post) => {
+            return <Post post={post}/>
+          })
+      }
         </div>
       </div>
     );
