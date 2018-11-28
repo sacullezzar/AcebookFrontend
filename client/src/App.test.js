@@ -5,6 +5,17 @@ import App from './App';
 import Post from './components/post'
 import { mount, shallow, render } from 'enzyme';
 
+describe("App", function(){
+  it('renders without crashing', () => {
+    let mountedApp = shallow(<App />);
+  });
+
+  it('renders a NewPost newpost', () => {
+    let mountedApp = shallow(<App />);
+    const newpost = mountedApp.find('NewPost');
+    expect(newpost.length).toBe(1)
+  });
+});
 
 describe('<Title />', () => {
   it('should render corrctly with no props', () => {

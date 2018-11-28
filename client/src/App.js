@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import Header from './components/header.js'
+import Header from './components/header'
 import Post from './components/post'
-
+import NewPost from './components/NewPost'
 
 class App extends Component {
 
@@ -25,6 +25,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <NewPost />
         <div className='postsWrapper'>
           {this.state.posts.map ((post, index) => {
             return <Post post={post} key={index}/>
