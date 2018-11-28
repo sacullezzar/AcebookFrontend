@@ -22,14 +22,12 @@ class App extends Component {
 
   render() {
 
-    const posts = [{"user": "Prash","message": "Hello World!"}]
-
     return (
       <div className="App">
         <Header />
         <div className='postsWrapper'>
-          {posts.map ((post) => {
-            return <Post post={post}/>
+          {this.state.posts.map ((post, index) => {
+            return <Post post={post} key={index}/>
           })
       }
         </div>

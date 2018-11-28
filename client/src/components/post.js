@@ -11,10 +11,8 @@ class Post extends Component {
       <div className="username">{this.props.post.user}</div>
       <div className="body">{this.props.post.message}</div>
       </div>
-
     )
   }
-
 }
 
 export default Post

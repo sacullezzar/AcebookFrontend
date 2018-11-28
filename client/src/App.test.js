@@ -6,25 +6,49 @@ import Post from './components/post'
 import { mount, shallow, render } from 'enzyme';
 
 
+describe('<Title />', () => {
+  it('should render corrctly with no props', () => {
+    const component = shallow(<App />)
+    expect(component).toMatchSnapshot
+  })
 
-it('renders a title', () => {
-  const wrapper = shallow(<Title />);
-  expect(wrapper.find('.title').text()).toEqual('Acebook')
-});
+  it('renders a title', () => {
+    const wrapper = shallow(<Title />);
+    expect(wrapper.find('.title').text()).toEqual('Acebook')
+  });
+  //
+  // it('renders a post', () => {
+  //   const app = await mount(<App />)
+  //   const entry = post.find('.postWrapper')
+  //   expect(entry.find('.body').text()).toEqual('Hello World!')
+  // })
 
-it('renders a post', () => {
-  const post = await render(<App />)
-  const entry = post.find('.postWrapper')
-  expect(entry.find('.body').text()).toEqual('Hello World!')
+
+  // it('randers a username on a post', () => {
+  //   const postbox = shallow(<Post />)
+  //   expect(postbox.find('.username').text()).toEqual('Tom')
+  // })
 })
 
-// it('randers a username on a post', () => {
-//   const postbox = shallow(<Post />)
-//   expect(postbox.find('.username').text()).toEqual('Tom')
-// })
+describe('<Post />', () => {
 
-// describe('<App />', () => {
-//
+  let post
+
+  beforeEach(() => {
+    post = mount(<Post post={{"user": "Prash","message": "Hello world!"}} />);
+  });
+
+  it('renders a post', () => {
+    expect(post.find('.postWrapper').length).toEqual(1);
+  });
+
+  it('displays a given name', () => {
+    let div = post.find('.postWrapper')
+    expect(post.find('.username').text()).toEqual('Prash')
+  })
+})
+
+
 //   it('calls componentDidMount', () => {
 //     jest.fn(Post.prototype, 'componentDidMount');
 //     const wrapper = shallow(<Post />);
