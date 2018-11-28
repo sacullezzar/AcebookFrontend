@@ -27,10 +27,10 @@ describe('<Title />', () => {
     const wrapper = shallow(<Title />);
     expect(wrapper.find('.title').text()).toEqual('Acebook')
   });
+
 })
 
 describe('<Post />', () => {
-
   let post
 
   beforeEach(() => {
@@ -44,5 +44,16 @@ describe('<Post />', () => {
   it('displays a given name', () => {
     let div = post.find('.postWrapper')
     expect(post.find('.username').text()).toEqual('Prash')
+  })
+
+  it('displays a message', () => {
+    let div = post.find('.postWrapper')
+    expect(post.find('.body').text()).toEqual('Hello world!')
+  })
+})
+
+describe('backend integration', () => {
+  it('pulls data from the database', () => {
+    
   })
 })
