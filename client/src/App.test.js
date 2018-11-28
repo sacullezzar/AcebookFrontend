@@ -41,19 +41,26 @@ describe('<Post />', () => {
     expect(post.find('.postWrapper').length).toEqual(1);
   });
 
-  it('displays a given name', () => {
+  it('displays a given name and message', () => {
     let div = post.find('.postWrapper')
     expect(post.find('.username').text()).toEqual('Prash')
-  })
-
-  it('displays a message', () => {
-    let div = post.find('.postWrapper')
     expect(post.find('.body').text()).toEqual('Hello world!')
   })
 })
 
 describe('backend integration', () => {
+
+  let app
+
+  beforeEach(() => {
+    app = render(<App />)
+  })
+
   it('pulls data from the database', () => {
-    
+    function rendered(app) {
+      expect(app.find('.username').text()).toEqual('Mr Test')
+      expect(app.find('.body').text()).toEqual('Tester')
+    }
+    fetch(rendered)
   })
 })
