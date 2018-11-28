@@ -6,21 +6,26 @@ import Post from './components/post'
 
 
 class App extends Component {
-
-  render() {
-    const user = {
-      userName: 'Tom',
-      body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit atque ullam iure suscipit, voluptate quaerat ab magnam nemo ducimus quisquam!'
+  constructor() {
+    super();
+    this.state = {
+      posts: []
     }
+  }
 
-    const posts = [user, user, user, user, user]
+  componentDidMount(){
+   fetch('http://localhost:5000/api/posts')
+      .then(res => res.json())
+      .then(posts => this.setState({posts:posts}, () => console.log('Pulling from the db..', posts, this.state)));
+ }
 
+render() {
     return (
       <div className="App">
         <Header />
         <div className='postsWrapper'>
-          {posts.map ((user) => {
-            return <Post user={user} />
+          {this.state.posts.map ((post, index) => {
+            return <Post post={post} key={index}/>
           })}
         </div>
       </div>
