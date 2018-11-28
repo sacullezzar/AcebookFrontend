@@ -18,6 +18,8 @@ class Header extends Component {
         <div className='buttonContainer'>
           <ul className='buttonList'>
             <Button href='#' className='button'  name='New Post' />
+            <Button href='#' className='button' name='Log In' />
+            <Button href='#' className='button' name='Register' />
           </ul>
         </div>
       </header>

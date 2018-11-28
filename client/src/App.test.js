@@ -27,18 +27,6 @@ describe('<Title />', () => {
     const wrapper = shallow(<Title />);
     expect(wrapper.find('.title').text()).toEqual('Acebook')
   });
-  //
-  // it('renders a post', () => {
-  //   const app = await mount(<App />)
-  //   const entry = post.find('.postWrapper')
-  //   expect(entry.find('.body').text()).toEqual('Hello World!')
-  // })
-
-
-  // it('randers a username on a post', () => {
-  //   const postbox = shallow(<Post />)
-  //   expect(postbox.find('.username').text()).toEqual('Tom')
-  // })
 })
 
 describe('<Post />', () => {
@@ -58,19 +46,3 @@ describe('<Post />', () => {
     expect(post.find('.username').text()).toEqual('Prash')
   })
 })
-
-
-//   it('calls componentDidMount', () => {
-//     jest.fn(Post.prototype, 'componentDidMount');
-//     const wrapper = shallow(<Post />);
-//     expect(Post.prototype.componentDidMount.mock.calls.length).toBe(1);
-//   });
-// });
-
-// it('recieves post data', () => {
-//    const wrapper = shallow(<Post/>);
-//    wrapper.instance().componentDidMount = jest.fn();
-//    wrapper.update();
-//    wrapper.instance().constructor({name: 'Tom', body: 'Hello'});
-//    expect(wrapper.find('.body').text()).ToEqual('Hello')
-// })
