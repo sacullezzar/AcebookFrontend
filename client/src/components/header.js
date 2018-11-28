@@ -17,9 +17,7 @@ class Header extends Component {
         <Title />
         <div className='buttonContainer'>
           <ul className='buttonList'>
-          <Button href='#' className='button'  function={this.chickenDipper} name='Log In' />
-          <Button href='#' className='button' function={this.sirSpamalot} name='New Account' />
-          <Button href='#' className='button'  name='New Post' />
+            <Button href='#' className='button'  name='New Post' />
           </ul>
         </div>
       </header>

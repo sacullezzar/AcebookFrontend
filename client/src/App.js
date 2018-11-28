@@ -6,7 +6,6 @@ import Post from './components/post'
 import NewPost from './components/NewPost'
 
 class App extends Component {
-
   constructor(props){
     super(props)
     this.state = {
@@ -14,14 +13,14 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    fetch('http://localhost:3000/dummyJson.json')
-    .then(response => response.json())
-    .then(data => this.setState({posts: data}))
-  }
+componentDidMount(){
+  fetch('http://localhost:5000/api/posts')
+    .then(res => res.json())
+    .then(posts => this.setState({posts:posts}));
+}
 
-  render() {
 
+render() {
     return (
       <div className="App">
         <Header />
@@ -29,8 +28,8 @@ class App extends Component {
         <div className='postsWrapper'>
           {this.state.posts.map ((post, index) => {
             return <Post post={post} key={index}/>
-          })
-      }
+            })
+          }
         </div>
       </div>
     );

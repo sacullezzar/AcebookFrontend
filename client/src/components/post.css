@@ -3,3 +3,12 @@
   margin: 10px;
   width: 200px;
 }
+
+.userName {
+  margin-left: 20%;
+  margin-bottom: 6px;
+}
+
+button {
+  float: right;
+}
