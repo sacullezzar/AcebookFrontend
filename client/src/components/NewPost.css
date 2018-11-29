@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Audiowide');
 
 .NewPost {
-  background-color: #f1f1f1;
+  background-color: white;
   padding-bottom: 40px;
   padding-top: 40px
 }
 .postfield {
-    width: 17%;
+    width: 30%;
     height: 100px;
     padding: 12px 20px;
     box-sizing: border-box;
@@ -17,6 +17,8 @@
     border: 2px solid black;
 }
 .username-field {
+  width: 30%;
+  height: 25px;
   border: 2px solid black;
 }
 
@@ -24,6 +26,7 @@
 
 .postbutton
 {
+  width: 30%;
   text-align: center !important;
   align-items: center !important;
     padding: 16px 32px;
