@@ -6,12 +6,12 @@ import Post from './components/post'
 import NewPost from './components/NewPost'
 
 class App extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      posts: []
-    }
+constructor(props){
+  super(props)
+  this.state = {
+    posts: []
   }
+}
 
 componentDidMount(){
   fetch('http://localhost:5000/api/posts')

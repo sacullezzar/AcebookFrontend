@@ -23,13 +23,9 @@ describe("New Post", function(){
     expect(submitButton.length).toBe(1);
   })
 
-
-    it('should respond to change event and change the state of the Login Component', () => {
-     const wrapper = shallow(<NewPost />);
-     wrapper.find('.postfield').simulate('change', {target: {value: 'cats'}});
-     expect(wrapper.state('message')).toEqual('cats');
-    })
-
-
-
+  it('should respond to change event and change the state of the Login Component', () => {
+   const wrapper = shallow(<NewPost />);
+   wrapper.find('.postfield').simulate('change', {target: {value: 'cats'}});
+   expect(wrapper.state('message')).toEqual('cats');
+  })
 })
