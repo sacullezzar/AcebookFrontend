@@ -9,7 +9,6 @@ body {
 
 .App-header {
   background-color: #282c34;
-  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,17 +19,24 @@ body {
 
 ul {
   list-style-type: none;
-  margin: 0;
+  margin-bottom: 22%;
   padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
+  width: 100%;
+}
+
+li {
+  display: inline;
+  padding: 4px;
+  float: left;
 }
 
 .buttonList a {
+  background-color: #f1f1f1;
   display: block;
   color: #000;
   padding: 8px 16px;
   text-decoration: none;
+  border-radius: 4px;
 }
 
 .buttonList a:hover {
@@ -42,4 +48,17 @@ ul {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
+}
+
+.post {
+  background-color: #282c34;
+  color: white;
+  padding: 3px;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.username {
+  margin-bottom: 5px;
+  margin-left: 10px;
 }

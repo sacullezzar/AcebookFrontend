@@ -27,6 +27,7 @@ describe("New Post", function(){
     expect(submitButton.length).toBe(1);
   })
 
+
   test('should respond to change event and change the state of the Field Value', () => {
     const wrapper = shallow(<NewPost />);
     wrapper.find('.postfield').simulate('change', {target: {value: 'cats'}});
@@ -48,36 +49,5 @@ describe("New Post", function(){
   });
 
 
+
 })
-
-// describe('update state', () =>{
-//   let mountedNewPost;
-//   beforeEach(()=>{
-//     mountedNewPost = shallow(<NewPost />);
-//   })
-
-  // it('calls fetch in #componentDidMount', ()=>{
-  //   const fakeEvent = { preventDefault: () => console.log('preventDefault') };
-  //   const loginComponent = shallow(<NewPost />);
-  //   loginComponent.find('#messageForm').simulate('submit', fakeEvent);
-  //   expect(fetch('http://localhost:5000/api/posts/')).toHaveBeenCalled()
-  //  });
-// 
-// })
-
-//    it('calls axios.get with correct url', ()=>{
-//        return mountedStoreLocator.instance().componentDidMount().then(()=>{
-//            expect(axios.get).toHaveBeenCalledWith('http://localhost:3000/data/shops.json');
-//        })
-//    });
-//
-//    it('updates state with api data', () => {
-//        return mountedStoreLocator.instance().componentDidMount().then(()=> {
-//          expect(mountedStoreLocator.state()).toHaveProperty('shops',
-//              [{
-//                  "location": "test location",
-//                  "address" : "test address"
-//              }]
-//          );
-//        })
-//        });

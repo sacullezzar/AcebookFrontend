@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import './App.css';
 import Header from './components/header'
 import Post from './components/post'
@@ -32,14 +31,14 @@ toggleNewPost() {
   this.setState({newposthidden:!this.state.newposthidden})
 }
 
-render() {
+  render() {
     return (
       <div className="App">
         <Header toggleNewPost={this.toggleNewPost} />
         {!this.state.newposthidden && <NewPost />}
         <div className='postsWrapper'>
           {this.state.posts.map ((post, index) => {
-            return <Post post={post} key={index}/>
+            return <div className='post'> <Post post={post} key={index}/> </div>
             })
           }
         </div>
