@@ -22,8 +22,7 @@ componentDidMount(){
 }
 
 toggleNewPost() {
-  // console.log("toggle called")
-
+  console.log("toggle?")
   this.setState({newposthidden:!this.state.newposthidden})
 }
 

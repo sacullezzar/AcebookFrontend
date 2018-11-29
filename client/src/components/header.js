@@ -4,13 +4,6 @@ import Button from './button'
 
 class Header extends Component {
 
-  chickenDipper() {
-    alert('Chicken dipppperrrrr!')
-  }
-
-  sirSpamalot() {
-    alert('SpamSpamSpamSpamSpamSpam')
-  }
   render() {
     var toggle = this.props.toggleNewPost
     return(
