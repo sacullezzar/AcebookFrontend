@@ -13,7 +13,7 @@ describe("App", function(){
   it('renders a NewPost newpost', () => {
     let mountedApp = shallow(<App />);
     const newpost = mountedApp.find('NewPost');
-    expect(newpost.length).toBe(1)
+    expect(newpost.length).toBe(0)
   });
 });
 
