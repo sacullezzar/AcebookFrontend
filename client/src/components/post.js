@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './post.css'
+// import * as serviceWorker from './serviceWorker';
 
 class Post extends Component {
-
-  async deletePost(id) {
+  deletePost(id) {
     fetch(`http://localhost:5000/api/posts/${id}`, {
       method: 'DELETE'
     })
