@@ -6,6 +6,7 @@ import Post from './components/post'
 import NewPost from './components/NewPost'
 
 class App extends Component {
+
   constructor(props){
     super(props)
     this.state = {
@@ -15,9 +16,14 @@ class App extends Component {
     this.toggleNewPost = this.toggleNewPost.bind(this);
   }
 
+  apiValid() {
+    return true
+  }
+
 componentDidMount(){
   fetch('http://localhost:5000/api/posts')
     .then(res => res.json())
+
     .then(posts => this.setState({posts:posts}));
 }
 
