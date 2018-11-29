@@ -64,9 +64,16 @@ class NewPost extends Component {
     return (
       <div style={divStyle} className="NewPost" >
         <form id="messageForm" onSubmit={this.formHandler}>
-        <input type="text" className="username-field" name="username" onChange={this.handleChangeUsername} placeholder="your name"/>
-          <textarea onChange={this.handleChangeMessage} name="message" id="message-field" className="postfield" placeholder="Enter your post" rows="6"  cols="50">
-          </textarea>
+          <div>
+            <label for="name-field">Name</label><br/>
+            <input id="name-field" type="text" className="username-field" name="username" onChange={this.handleChangeUsername} />
+          </div>
+          <div>
+          <label for="message-field">Message</label><br/>
+            <textarea onChange={this.handleChangeMessage} name="message" id="message-field" className="postfield"  rows="6"  cols="50">
+            </textarea>
+          </div>
+
           <div>
             <button type="submit" id="cb" className="postbutton">Add Post</button>
           </div>

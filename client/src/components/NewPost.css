@@ -1,4 +1,7 @@
-textarea {
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+
+
+.postfield {
     width: 17%;
     height: 100px;
     padding: 12px 20px;
@@ -7,6 +10,10 @@ textarea {
     border-radius: 4px;
     background-color: #FFFFFF;
     resize: none;
+    border: 2px solid black;
+}
+.username-field {
+  border: 2px solid black;
 }
 
 ul {
@@ -32,4 +39,32 @@ ul {
 .centered {
   text-align: center;
   align-items: center
+}
+
+.postbutton
+{
+  text-align: center !important;
+  align-items: center !important;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'AudioWide', cursive;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+.postbutton:hover {background-color: #539533;
+color: white}
+
+.NewPost {
+  background-color: #f1f1f1;
+  padding-bottom: 40px;
+  padding-top: 40px
 }
