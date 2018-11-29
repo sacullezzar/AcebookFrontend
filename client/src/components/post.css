@@ -34,7 +34,7 @@ button:hover {
 button:active {
   background: #2B78CB;
   box-shadow: inset 0 1px 0px #1C5491;
-
+}
 .deletebutton {
   float: right;
   background-color: white;
