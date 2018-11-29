@@ -12,12 +12,14 @@ class Header extends Component {
     alert('SpamSpamSpamSpamSpamSpam')
   }
   render() {
+    var toggle = this.props.toggleNewPost
     return(
       <header className="App-header">
         <Title />
         <div className='buttonContainer'>
           <ul className='buttonList'>
-            <Button href='#' className='button'  name='New Post' />
+
+            <Button href='#' className='button' function={this.props.toggleNewPost}  name='New Post' />
             <Button href='#' className='button' name='Log In' />
             <Button href='#' className='button' name='Register' />
           </ul>

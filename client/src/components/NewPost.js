@@ -5,10 +5,12 @@ class NewPost extends Component {
 
   constructor() {
     super()
+
     this.state = {
       username: '',
       message: '',
-      formSubmitted: false
+      formSubmitted: false,
+      isHidden:true
     }
     this.handleChangeMessage = this.handleChangeMessage.bind(this);
     this.handleChangeUsername = this.handleChangeUsername.bind(this);
@@ -31,8 +33,8 @@ class NewPost extends Component {
 
   formHandler(event) {
     // alert(this.state.message)
-    var url = 'https://example.com/profile';
-    var post = {username: this.state.username, message: this.state.message}
+    var url = 'http://localhost:5000/api/posts';
+    var post = {title: "nil", user: this.state.username, message: this.state.message}
     console.log(post)
     event.preventDefault();
 
@@ -48,49 +50,19 @@ class NewPost extends Component {
       }
     }).then(res => res.json())
     .then(response => console.log('Success:', JSON.stringify(response)))
+    .then(window.location.reload())
     .catch(error => console.error("Error:", error));
+
   }
 
 
-//   var url = 'https://example.com/profile';
-// var data = {username: 'example'};
-//
-// fetch(url, {
-//  method: 'POST', // or 'PUT'
-//  body: JSON.stringify(data), // data can be `string` or {object}!
-//  headers:{
-//    'Content-Type': 'application/json'
-//  }
-// }).then(res => res.json())
-// .then(response => console.log('Success:', JSON.stringify(response)))
-// .catch(error => console.error('Error:', error));
-  //   fetch('/api/v1/posts', {
-  //   method: 'POST',
-  //   body: JSON.stringify( post ),
-  //   // console.log(post)
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   }
-  // })
-  // .then(response => response.json())
-  // .then(postlist => {
-  //   this.setState({
-  //     post: {
-  //       username: '',
-  //       message: ''
-  //     }
-  //   }, addPost(postlist));
-  // })
-  // .catch(error => {
-  //   this.setState({
-  //     errorStatus: 'Error adding post'
-  //   })
-  // });
-
 
   render() {
+    var divStyle = {
+      display:'block'
+    }
     return (
-      <div className="NewPost">
+      <div style={divStyle} className="NewPost" >
         <form id="messageForm" onSubmit={this.formHandler}>
         <input type="text" className="username-field" name="username" onChange={this.handleChangeUsername} placeholder="your name"/>
           <textarea onChange={this.handleChangeMessage} name="message" id="message-field" className="postfield" placeholder="Enter your post" rows="6"  cols="50">

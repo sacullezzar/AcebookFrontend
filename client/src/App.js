@@ -9,8 +9,10 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      posts: []
+      posts: [],
+      newposthidden:true
     }
+    this.toggleNewPost = this.toggleNewPost.bind(this);
   }
 
 componentDidMount(){
@@ -19,12 +21,17 @@ componentDidMount(){
     .then(posts => this.setState({posts:posts}));
 }
 
+toggleNewPost() {
+  // console.log("toggle called")
+
+  this.setState({newposthidden:!this.state.newposthidden})
+}
 
 render() {
     return (
       <div className="App">
-        <Header />
-        <NewPost />
+        <Header toggleNewPost={this.toggleNewPost} />
+        {!this.state.newposthidden && <NewPost />}
         <div className='postsWrapper'>
           {this.state.posts.map ((post, index) => {
             return <Post post={post} key={index}/>
