@@ -8,24 +8,46 @@ describe("New Post", function(){
     mountedNewPost = shallow(<NewPost />);
   })
 
-  it('renders without crashing', () => {
+  test('renders without crashing', () => {
     let mountedNewPost = shallow(<NewPost />);
   });
 
-  it('Has a text field', () => {
+  test('Has a text field', () => {
     const textField = mountedNewPost.find('textarea.postfield' )
     expect(textField.length).toBe(1)
   });
 
-  it('Has a submit button', ()=>{
-    const submitButton =
-    mountedNewPost.find('button.postbutton')
+  test('Has a text field', () => {
+    const usernameField = mountedNewPost.find('input.username-field' )
+    expect(usernameField.length).toBe(1)
+  });
+
+  test('Has a submit button', ()=>{
+    const submitButton = mountedNewPost.find('.postbutton')
     expect(submitButton.length).toBe(1);
   })
 
-  it('should respond to change event and change the state of the Login Component', () => {
-   const wrapper = shallow(<NewPost />);
-   wrapper.find('.postfield').simulate('change', {target: {value: 'cats'}});
-   expect(wrapper.state('message')).toEqual('cats');
+
+  test('should respond to change event and change the state of the Field Value', () => {
+    const wrapper = shallow(<NewPost />);
+    wrapper.find('.postfield').simulate('change', {target: {value: 'cats'}});
+    expect(wrapper.state('message')).toEqual('cats');
   })
+
+  test('should respond to change event and change the state of the Username Field Value', () => {
+    const wrapper = shallow(<NewPost />);
+    wrapper.find('.username-field').simulate('change', {target: {value: 'a dog'}});
+    expect(wrapper.state('username')).toEqual('a dog');
+  })
+
+  test('should fail if no credentials are provided', () => {
+      const fakeEvent = { preventDefault: () => console.log('preventDefault') };
+      const loginComponent = shallow(<NewPost />);
+      expect(loginComponent.find('#messageForm').length).toBe(1);
+      loginComponent.find('#messageForm').simulate('submit', fakeEvent);
+      expect(loginComponent.state('formSubmitted')).toEqual(true)
+  });
+
+
+
 })

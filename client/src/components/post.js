@@ -15,7 +15,7 @@ class Post extends Component {
   render() {
     return (
       <div className='postWrapper' id={this.props.post._id}>
-        <button className="delete" onClick={this.deletePost.bind(this, this.props.post._id)}>Delete</button>
+        <button className="deletebutton" onClick={this.deletePost.bind(this, this.props.post._id)}>Delete</button>
         <div className="username">{this.props.post.user}</div>
         <div className="body">{this.props.post.message}</div>
         <div className="date">{this.props.post.date}</div>
