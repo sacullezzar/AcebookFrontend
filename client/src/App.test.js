@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import sinon from 'sinon'
 import Title from './components/title'
 import App from './App';
 import Post from './components/post'
 import { mount, shallow, render } from 'enzyme';
+
+var sinonChai = require('sinon-chai')
+var chai = require('chai')
+var chaiExpect = chai.expect
+chai.use(sinonChai)
 
 describe("App", function(){
   it('renders without crashing', () => {
@@ -50,17 +56,10 @@ describe('<Post />', () => {
 
 describe('backend integration', () => {
 
-  let app
-
-  beforeEach(() => {
-    app = render(<App />)
-  })
-
-  it('pulls data from the database', () => {
-    function rendered(app) {
-      expect(app.find('.username').text()).toEqual('Mr Test')
-      expect(app.find('.body').text()).toEqual('Tester')
-    }
-    fetch(rendered)
+  it('Component fetches data from API', async (done) => {
+      const viewPost = sinon.spy(App.prototype, 'apiValid')
+      const app = mount(<App />)
+      chaiExpect(viewPost).to.have.been.called
   })
 })
+// I am really sad that this test does not work :(
