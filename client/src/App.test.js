@@ -18,9 +18,15 @@ describe("App", function(){
 
   it('renders a NewPost newpost', () => {
     let mountedApp = shallow(<App />);
-    const newpost = mountedApp.find('NewPost');
-    expect(newpost.length).toBe(1)
+    // const newpost = mountedApp.find('NewPost');
+    const instance = mountedApp.instance();
+    instance.toggleNewPost()
+    expect(mountedApp.state('newposthidden')).toBe(false)
   });
+
+  it('toggles new post display', () =>{
+
+  })
 });
 
 describe('<Title />', () => {
